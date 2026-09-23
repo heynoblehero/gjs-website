@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorri Jewellers & Sons (GJS) | Best Gold, Diamond & Silver Jewellery in Ghaziabad</title>
+    <meta name="description" content="Gold, diamond and silver jewellery for women and men: necklaces, rings, bangles, silver bartan, coins and payals. Gorri Jewellers & Sons, Ghaziabad.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            800: '#3D0C13',
+                            900: '#2C0E14',
+                            950: '#1D080C',
+                        },
+                        gold: {
+                            300: '#F3E5AB',
+                            400: '#E6CA65',
+                            500: '#D4AF37',
+                            600: '#B89025',
+                            700: '#916E13',
+                        },
+                        cream: '#FAF7F2',
+                        creamDark: '#F2EBDC',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF7F2;
+            color: #2C0E14;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFE89C 0%, #D4AF37 50%, #916E13 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-pattern {
+            background-color: #2C0E14;
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #2C0E14 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        button:focus-visible, a:focus-visible {
+            outline: 2px solid #D4AF37;
+            outline-offset: 2px;
+        }
+        .no-scrollbar { scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            * { transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body class="bg-cream text-burgundy-900 antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-burgundy-950 text-gold-300 text-xs sm:text-sm py-2 px-4 border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-1 sm:gap-4">
+            <div class="flex items-center space-x-3">
+                <span class="bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded-full text-xs font-medium border border-gold-500/40">✨ Authorized Distributor</span>
+                <span>India's No. 1 Diamond King - <strong>Kisna Diamond</strong></span>
+            </div>
+            <div class="flex items-center space-x-4 text-xs">
+                <span><i class="fa-solid fa-percent text-gold-400 mr-1"></i> Flat 8% Making Charges</span>
+                <span class="hidden md:inline">•</span>
+                <span><i class="fa-solid fa-award text-gold-400 mr-1"></i> 45+ Years of Trust</span>
+                <span>•</span>
+                <a href="tel:+919821756547" class="hover:text-white transition-colors"><i class="fa-solid fa-phone text-gold-400 mr-1"></i> Ghaziabad Showrooms</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-burgundy-900/95 backdrop-blur-md text-white border-b border-gold-500/30 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Branding -->
+                <a href="#home" onclick="showPage('home')" class="flex items-center space-x-3 group">
+                    <div class="relative w-20 sm:w-24 h-auto flex items-center justify-center">
+                        <img src="images/Logo-removebg.png" alt="Gorri Jewellers and Sons Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text">Gorri Jewellers & Sons</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <button onclick="showPage('home')" id="nav-home" class="nav-btn text-gold-400 hover:text-gold-300 transition-colors py-2 border-b-2 border-gold-500">Home</button>
+                    <button onclick="showPage('about')" id="nav-about" class="nav-btn text-gray-300 hover:text-gold-300 transition-colors py-2 border-b-2 border-transparent">About Us</button>
+                    <button onclick="showPage('collections')" id="nav-collections" class="nav-btn text-gray-300 hover:text-gold-300 transition-colors py-2 border-b-2 border-transparent">Jewellery Collections</button>
+                    <button onclick="showPage('stores')" id="nav-stores" class="nav-btn text-gray-300 hover:text-gold-300 transition-colors py-2 border-b-2 border-transparent">Our Stores</button>
+                </nav>
+
+                <!-- Action Button & Mobile Menu Toggle -->
+                <div class="flex items-center space-x-3">
+                    <a href="https://wa.me/919821756547?text=Hello%20GJS%20Jewellers,%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg transition-transform active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Us</span>
+                    </a>
+
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu" class="md:hidden text-gold-400 hover:text-white p-2 rounded-md focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-burgundy-950 border-b border-gold-500/30 px-4 pt-3 pb-6 space-y-3">
+            <button onclick="showPage('home'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-md text-gold-300 font-medium hover:bg-burgundy-900">Home</button>
+            <button onclick="showPage('about'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-md text-gray-200 font-medium hover:bg-burgundy-900">About Us</button>
+            <button onclick="showPage('collections'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-md text-gray-200 font-medium hover:bg-burgundy-900">Jewellery Collections</button>
+            <button onclick="showPage('stores'); toggleMobileMenu()" class="block w-full text-left py-2 px-3 rounded-md text-gray-200 font-medium hover:bg-burgundy-900">Our Stores & Directions</button>
+            <div class="pt-2 border-t border-gold-500/20 flex flex-col gap-2">
+                <a href="https://wa.me/919821756547?text=Hello%20GJS%20Jewellers,%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection." target="_blank" rel="noopener" class="flex items-center justify-center space-x-2 bg-emerald-600 text-white py-2.5 rounded-lg text-sm font-semibold">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Connect on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main id="app-container">
+
+        <!-- SECTION 1: HOME PAGE -->
+        <div id="page-home" class="page-section -mt-16 sm:-mt-10">
+            <section class="relative bg-burgundy-950 text-white overflow-hidden pt-2 pb-16 lg:py-24 border-b border-gold-500/30">
+                <div class="absolute inset-0 opacity-20 bg-pattern"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center space-x-2 bg-gold-500/10 border border-gold-500/40 text-gold-300 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium">
+                                <i class="fa-solid fa-crown text-gold-400"></i>
+                                <span>45+ Years of Honesty & Elegance in Ghaziabad</span>
+                            </div>
+                            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                                Timeless Elegance, <br>
+                                <span class="gold-gradient-text">Unmatched Purity.</span>
+                            </h1>
+                            <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                                Welcome to <strong>Gorri Jewellers and Sons (GJS)</strong>. Ghaziabad's most trusted name for Gold, Diamond, and Silver jewellery. Specializing in high-visual appeal lightweight jewellery with flat <strong>8% making charges</strong>.
+                            </p>
+
+                            <!-- Special Feature Chips -->
+                            <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3 text-xs sm:text-sm">
+                                <span class="bg-burgundy-900/80 border border-gold-500/30 px-3 py-1.5 rounded-md text-gold-200"><i class="fa-solid fa-gem text-gold-400 mr-1"></i> Kisna Diamond Distributor</span>
+                                <span class="bg-burgundy-900/80 border border-gold-500/30 px-3 py-1.5 rounded-md text-gold-200"><i class="fa-solid fa-scale-balanced text-gold-400 mr-1"></i> Low Weight, Grand Look</span>
+                                <span class="bg-burgundy-900/80 border border-gold-500/30 px-3 py-1.5 rounded-md text-gold-200"><i class="fa-solid fa-certificate text-gold-400 mr-1"></i> 100% BIS Hallmarked</span>
+                            </div>
+                            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                                <button onclick="openCollection('gold','women')" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-burgundy-950 font-bold px-8 py-3.5 rounded-lg shadow-lg hover:shadow-gold-500/20 transition-all flex items-center justify-center space-x-2">
+                                    <span>Explore Collections</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <button onclick="showPage('stores')" class="w-full sm:w-auto border border-gold-400 text-gold-300 hover:bg-gold-500/10 font-medium px-6 py-3.5 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Visit Showrooms</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 relative">
+                            <div class="relative mx-auto max-w-md lg:max-w-none">
+                                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-gold-500 to-gold-700 blur opacity-40"></div>
+                                <div class="relative bg-burgundy-900 border border-gold-500/40 rounded-2xl overflow-hidden shadow-2xl">
+                                    <img src="images/Antique-necklace8.png" alt="Antique gold bridal choker set with matching earrings" class="w-full h-96 object-cover">
+                                    <div class="p-6 bg-burgundy-950/90 text-center">
+                                        <h3 class="font-serif text-xl font-semibold text-gold-300">Royal Gold & Diamond Jewellery</h3>
+                                        <p class="text-xs text-gray-300 mt-1">Exclusive bridal & everyday statement pieces curated for 45 years.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Trust USPs Bar -->
+            <section class="py-12 bg-creamDark border-b border-gold-500/20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                        <div class="p-6 bg-white rounded-xl shadow-sm border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-burgundy-900/10 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <h4 class="font-serif font-bold text-lg text-burgundy-900">45+ Years Legacy</h4>
+                                <p class="text-xs text-gray-600 mt-1">Serving Ghaziabad with unwavering trust, purity, and transparency since 1980.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-white rounded-xl shadow-sm border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-burgundy-900/10 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                    <i class="fa-solid fa-gem"></i>
+                                </div>
+                                <h4 class="font-serif font-bold text-lg text-burgundy-900">Kisna Diamond Partner</h4>
+                                <p class="text-xs text-gray-600 mt-1">Authorized distributor for India's No.1 Diamond King Kisna Diamonds.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-white rounded-xl shadow-sm border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-burgundy-900/10 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                    <i class="fa-solid fa-feather-pointed"></i>
+                                </div>
+                                <h4 class="font-serif font-bold text-lg text-burgundy-900">Kum Weight, Bada Look</h4>
+                                <p class="text-xs text-gray-600 mt-1">Specialized engineering in light-weight designs that look grand & heavy.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-white rounded-xl shadow-sm border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-burgundy-900/10 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                    <i class="fa-solid fa-percent"></i>
+                                </div>
+                                <h4 class="font-serif font-bold text-lg text-burgundy-900">Flat 8% Making Charges</h4>
+                                <p class="text-xs text-gray-600 mt-1">Honest & competitive pricing with maximum value for your investment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Browse the collection: every tile opens the matching section -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-burgundy-900">Explore Our Specialities</h2>
+                    <p class="text-sm text-gray-600 mt-2">Gold, diamond and silver collections. Pick a section to see the designs.</p>
+                </div>
+                <div id="home-tiles" class="grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- Kisna Diamond Special Banner -->
+            <section class="bg-burgundy-900 text-white py-14 px-4 sm:px-6 lg:px-8 border-y border-gold-500/30">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-8 space-y-4">
+                        <span class="bg-gold-500/20 text-gold-300 text-xs px-3 py-1 rounded-full font-semibold border border-gold-500/40 uppercase tracking-widest">Official Partnership</span>
+                        <h2 class="font-serif text-3xl sm:text-3xl font-bold gold-gradient-text">India's No. 1 Diamond King - Kisna Diamonds</h2>
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                            As official authorized distributors of <strong>Kisna Diamond Jewellery</strong> in Ghaziabad, Gorri Jewellers & Sons brings you 100% certified, exquisite diamond ornaments backed by standard buyback guarantee and superior finish.
+                        </p>
+                    </div>
+                    <div class="md:col-span-4 text-center md:text-right">
+                        <button onclick="openCollection('diamond')" class="bg-gold-500 hover:bg-gold-400 text-burgundy-950 font-bold px-6 py-3 rounded-lg transition-all shadow-md">
+                            Browse Kisna Diamonds
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials & Customer Trust -->
+            <section class="py-16 bg-cream">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <h2 class="font-serif text-3xl font-bold text-burgundy-900">Loved by Generations in Ghaziabad</h2>
+                        <p class="text-gray-600 text-sm mt-2">What our customers say about our 8% making charges & honest guidance.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-gold-500/20 shadow-sm space-y-3 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-gold-500 text-sm space-x-1 mb-2">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-xs text-gray-700 italic">"Humare ghar ki saari shadi ki jewellery GJS Pratap Vihar se hi aati hai. Unka 'kum weight me bada look' design system waqai mein kamal hai!"</p>
+                            </div>
+                            <div class="pt-2 border-t border-gray-100">
+                                <h5 class="font-semibold text-sm text-burgundy-900">Rajesh Sharma</h5>
+                                <span class="text-[11px] text-gray-500">Pratap Vihar, Ghaziabad</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl border border-gold-500/20 shadow-sm space-y-3 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-gold-500 text-sm space-x-1 mb-2">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-xs text-gray-700 italic">"Most honest jewellers in Ghaziabad. Only 8% making charges for such intricate gold antique designs is unbeatable."</p>
+                            </div>
+                            <div class="pt-2 border-t border-gray-100">
+                                <h5 class="font-semibold text-sm text-burgundy-900">Pooja Verma</h5>
+                                <span class="text-[11px] text-gray-500">Vijay Nagar, Ghaziabad</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl border border-gold-500/20 shadow-sm space-y-3 flex flex-col justify-between">
+                            <div>
+                                <div class="flex text-gold-500 text-sm space-x-1 mb-2">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-xs text-gray-700 italic">"Bought a certified Kisna diamond ring from Vijay Nagar branch. Excellent transparency and warm hospitality."</p>
+                            </div>
+                            <div class="pt-2 border-t border-gray-100">
+                                <h5 class="font-semibold text-sm text-burgundy-900">Amit Chaudhry</h5>
+                                <span class="text-[11px] text-gray-500">Sector 12, Ghaziabad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 2: ABOUT US PAGE -->
+        <div id="page-about" class="page-section hidden">
+            <section class="bg-burgundy-950 text-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gold-500/30 text-center">
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Our 45-Year Heritage</span>
+                    <h3 class="font-serif text-4xl sm:text-3xl font-bold gold-gradient-text">About Gorri Jewellers & Sons (GJS)</h3>
+                    <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
+                        A legacy built on purity, ethics, and deep customer relationships across Ghaziabad for over four decades.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Main Story Section -->
+            <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-gold-600 font-semibold text-sm uppercase tracking-wider">Established 1980</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-burgundy-900">Honesty & Purity at the Heart of Every Jewel</h2>
+                        <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                            For the last <strong>45 years</strong>, Gorri Jewellers and Sons (GJS) has been an integral part of countless family celebrations, weddings, and milestones in Ghaziabad. Operating through 2 prominent showrooms in Pratap Vihar and Vijay Nagar, we take pride in delivering certified gold, diamond, and silver ornaments.
+                        </p>
+                        <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                            Our core motto revolves around <strong>reliable and honest business ethics</strong>. We believe fine jewellery should be accessible and fair, which is why we maintain an industry-defying flat rate of <strong>8% making charges</strong> without compromising on detail or purity.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gold-500/20">
+                            <div>
+                                <h4 class="font-serif text-2xl font-bold text-gold-600">45+ Years</h4>
+                                <p class="text-xs text-gray-600">Unbroken trust in Ghaziabad</p>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-2xl font-bold text-gold-600">2 Showrooms</h4>
+                                <p class="text-xs text-gray-600">Pratap Vihar & Vijay Nagar</p>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-2xl font-bold text-gold-600">Flat 8%</h4>
+                                <p class="text-xs text-gray-600">Ultra-fair making charges</p>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-2xl font-bold text-gold-600">Authorized</h4>
+                                <p class="text-xs text-gray-600">Kisna Diamond Partner</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6">
+                        <div class="relative">
+                            <div class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-gold-500 to-gold-700 opacity-30 blur"></div>
+                            <img src="images/ShopFront.png" alt="GJS Craftsmanship" class="relative rounded-xl shadow-xl w-full h-[420px] object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Specialty Highlight Box -->
+            <section class="bg-creamDark py-16 border-y border-gold-500/20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-10">
+                        <h3 class="font-serif text-3xl font-bold text-burgundy-900">Our Specialization</h3>
+                        <p class="text-gray-600 text-sm mt-2">"Kum weight ki badi dikhne wali jewellery"</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-sm border border-gold-500/20 text-center space-y-3 flex flex-col justify-between">
+                            <div>
+                                <div class="w-14 h-14 bg-burgundy-900 text-gold-400 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                                    <i class="fa-solid fa-gem"></i>
+                                </div>
+                                <h4 class="font-serif font-bold text-xl text-burgundy-900">Antique Gold Artistry</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed mt-2">Exquisite traditional temple, Kundan, and antique gold sets handcrafted with intricate precision.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-sm border border-gold-500/20 text-center space-y-3 flex flex-col justify-between">
+                            <div>
+                                <div class="w-14 h-14 bg-burgundy-900 text-gold-400 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                </div>
+                                <h4 class="font-serif font-bold text-xl text-burgundy-900">Lightweight Heavy Looks</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed mt-2">Master techniques to create expansive neckpieces and bangles that weigh lighter on budget but appear magnificently heavy.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl shadow-sm border border-gold-500/20 text-center space-y-3 flex flex-col justify-between">
+                            <div>
+                                <div class="w-14 h-14 bg-burgundy-900 text-gold-400 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <h4 class="font-serif font-bold text-xl text-burgundy-900">100% BIS Hallmarked</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed mt-2">Guaranteed hallmarked gold and certified Kisna diamonds with complete purity documents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 3: COLLECTIONS PAGE -->
+        <div id="page-collections" class="page-section hidden">
+            <section class="bg-burgundy-950 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-gold-500/30 text-center">
+                <div class="max-w-4xl mx-auto space-y-3">
+                    <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Exquisite Catalogue</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text">Our Jewellery Collections</h1>
+                    <p class="text-gray-300 text-xs sm:text-sm max-w-xl mx-auto font-light">
+                        Choose Gold, Diamond or Silver, then browse by women's and men's jewellery, necklaces, rings and bangles.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Filter bar: metal tabs, then women/men and category shortcuts -->
+            <section id="filter-bar" class="bg-white border-b border-gold-500/20 md:sticky md:top-20 z-30 shadow-sm">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-3">
+                    <div class="flex justify-center gap-2 sm:gap-4">
+                        <button data-metal="gold" onclick="switchMainCategory('gold')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Gold</button>
+                        <button data-metal="diamond" onclick="switchMainCategory('diamond')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Diamond</button>
+                        <button data-metal="silver" onclick="switchMainCategory('silver')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Silver</button>
+                    </div>
+                    <div id="sub-nav" class="flex items-center gap-2 overflow-x-auto no-scrollbar whitespace-nowrap sm:justify-center"></div>
+                </div>
+            </section>
+
+            <!-- Filled by renderCollections() -->
+            <div id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-14"></div>
+        </div>
+
+        <!-- SECTION 4: SHOWROOM LOCATIONS -->
+        <div id="page-stores" class="page-section hidden">
+            <section class="bg-burgundy-950 text-white py-14 px-4 sm:px-6 lg:px-8 border-b border-gold-500/30 text-center">
+                <div class="max-w-4xl mx-auto space-y-3">
+                    <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Visit Our Showrooms</span>
+                    <h1 class="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text">Ghaziabad Branch Locations</h1>
+                    <p class="text-gray-300 text-xs sm:text-sm max-w-xl mx-auto font-light">
+                        Step into our air-conditioned showrooms to view our full collection in person.
+                    </p>
+                </div>
+            </section>
+            <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+                <!-- Both Showrooms Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Branch 1 Card -->
+                    <div class="bg-white rounded-2xl border border-gold-500/30 shadow-lg overflow-hidden flex flex-col justify-between">
+                        <div class="p-6 sm:p-8 space-y-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span class="bg-gold-500/10 text-gold-700 text-xs font-bold px-3 py-1 rounded-full border border-gold-500/30">Branch 1</span>
+                                    <h3 class="font-serif text-2xl font-bold text-burgundy-900 mt-2">Gorri Jewellers & Sons</h3>
+                                    <p class="text-xs text-gray-500 font-medium">Pratap Vihar Branch</p>
+                                </div>
+                                <div class="w-10 h-10 bg-burgundy-900 text-gold-400 rounded-full flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-store"></i>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                <i class="fa-solid fa-location-dot text-gold-600 mr-2"></i>
+                                Ground Floor, M-41, Sector 12, Block M, Pratap Vihar, Ghaziabad, Uttar Pradesh 201009
+                            </p>
+                            <p class="text-xs text-gray-500 italic">Landmark: Near VDS Convent & FirstCry Showroom</p>
+
+                            <div class="space-y-2 text-xs text-gray-600 pt-2 border-t border-gray-100">
+                                <p><i class="fa-solid fa-clock text-gold-600 mr-2"></i> Open Today: 10:30 AM - 9:30 PM (Weekly Closed: Tuesday)</p>
+                                <p><i class="fa-solid fa-phone text-gold-600 mr-2"></i> Contact: +91 82876 80527</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-creamDark p-4 border-t border-gold-500/20 flex flex-col sm:flex-row gap-3">
+                            <a href="https://www.google.com/maps/dir//Ground+Floor,+Gorri+Jewellers+and+Sons's+-+Best+Jewellers+In+Ghaziabad,+M-41,+near+VDS+Convent+and+First+Cry+Showroom,+Sector+12,+Block+M,+Pratap+Vihar,+Ghaziabad,+Uttar+Pradesh+201009/" target="_blank" class="flex-1 bg-burgundy-900 hover:bg-burgundy-950 text-gold-300 text-xs font-semibold py-2.5 px-4 rounded-lg text-center flex items-center justify-center space-x-2 transition-colors">
+                                <i class="fa-solid fa-diamond-turn-right text-gold-400"></i>
+                                <span>Get Google Maps Direction</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Branch 2 Card -->
+                    <div class="bg-white rounded-2xl border border-gold-500/30 shadow-lg overflow-hidden flex flex-col justify-between">
+                        <div class="p-6 sm:p-8 space-y-4">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span class="bg-gold-500/10 text-gold-700 text-xs font-bold px-3 py-1 rounded-full border border-gold-500/30">Branch 2</span>
+                                    <h3 class="font-serif text-2xl font-bold text-burgundy-900 mt-2">Gorri Jewellers</h3>
+                                    <p class="text-xs text-gray-500 font-medium">Vijay Nagar Branch</p>
+                                </div>
+                                <div class="w-10 h-10 bg-burgundy-900 text-gold-400 rounded-full flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-shop"></i>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                <i class="fa-solid fa-location-dot text-gold-600 mr-2"></i>
+                                Shop No. E-220 G, Sector 12, Vijay Nagar, Ghaziabad, UP 201009
+                            </p>
+                            <p class="text-xs text-gray-500 italic">Landmark: Main Gaushala Road Market</p>
+
+                            <div class="space-y-2 text-xs text-gray-600 pt-2 border-t border-gray-100">
+                                <p><i class="fa-solid fa-clock text-gold-600 mr-2"></i> Open Today: 10:30 AM - 9:30 PM (Weekly Closed: Tuesday)</p>
+                                <p><i class="fa-solid fa-phone text-gold-600 mr-2"></i> Contact: +91 98105 94805 / +91 98217 56547</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-creamDark p-4 border-t border-gold-500/20 flex flex-col sm:flex-row gap-3">
+                            <a href="https://www.google.com/maps/dir//Gorri+Jewellers+-+best+jewellers+in+Ghaziabad+best+jewellery+shop+in+Vijay+Nagar+ghaziabad,+Shop+No.+E,+220,+Gaushala+Rd,+Sector+12,+Mirzapur,+Pratap+Vihar,+Ghaziabad,+Uttar+Pradesh+201001/" target="_blank" class="flex-1 bg-burgundy-900 hover:bg-burgundy-950 text-gold-300 text-xs font-semibold py-2.5 px-4 rounded-lg text-center flex items-center justify-center space-x-2 transition-colors">
+                                <i class="fa-solid fa-diamond-turn-right text-gold-400"></i>
+                                <span>Get Google Maps Direction</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative border border-gold-500/30">
+            <button id="modal-close" onclick="closeModal()" aria-label="Close" class="absolute top-3 right-3 text-gray-600 hover:text-black w-9 h-9 rounded-full bg-white/90 flex items-center justify-center z-10 shadow">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="bg-creamDark flex items-center justify-center">
+                    <img id="modal-img" src="" alt="" class="w-full max-h-[60vh] md:max-h-[80vh] object-contain">
+                </div>
+                <div class="p-6 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span id="modal-tag" class="text-[10px] uppercase font-bold text-gold-700 bg-gold-500/20 px-2.5 py-0.5 rounded-full">Category</span>
+                        <h3 id="modal-title" class="font-serif text-2xl font-bold text-burgundy-900 mt-2">Item Name</h3>
+                        <p id="modal-path" class="text-xs text-gold-700 mt-1"></p>
+                        <p id="modal-desc" class="text-sm text-gray-600 mt-3 leading-relaxed">Description</p>
+                    </div>
+                    <div class="space-y-2 pt-3 border-t border-gray-100">
+                        <a id="modal-wa-link" href="#" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-lg text-xs flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Ask for price on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-burgundy-950 text-white border-t border-gold-500/30 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-gold-500/20">
+                <!-- Brand Info -->
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full border border-gold-500 flex items-center justify-center bg-burgundy-900">
+                            <span class="font-serif font-bold text-gold-400 text-xs">GJS</span>
+                        </div>
+                        <span class="font-serif text-lg font-bold gold-gradient-text">Gorri Jewellers & Sons</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light">
+                        Ghaziabad's premier destination for 100% hallmarked gold, Kisna diamonds, antique jewellery, and silver ornaments with flat 8% making charges.
+                    </p>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-gold-300 text-sm mb-3">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><button onclick="showPage('home')" class="hover:text-gold-400">Home Page</button></li>
+                        <li><button onclick="showPage('about')" class="hover:text-gold-400">Our 45-Year Heritage</button></li>
+                        <li><button onclick="showPage('collections')" class="hover:text-gold-400">Jewellery Catalog</button></li>
+                        <li><button onclick="showPage('stores')" class="hover:text-gold-400">Showrooms & Directions</button></li>
+                    </ul>
+                </div>
+
+                <!-- Top Categories -->
+                <div>
+                    <h4 class="font-serif font-bold text-gold-300 text-sm mb-3">Our Collections</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><button onclick="openCollection('gold')" class="hover:text-gold-400">Antique and Plain Gold Collection</button></li>
+                        <li><button onclick="openCollection('diamond')" class="hover:text-gold-400">Diamond Collection</button></li>
+                        <li><button onclick="openCollection('silver')" class="hover:text-gold-400">Silver Collection</button></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Timings -->
+                <div>
+                    <h4 class="font-serif font-bold text-gold-300 text-sm mb-3">Showroom Locations</h4>
+                    <div class="space-y-2 text-xs text-gray-200">
+                        <p><strong>Branch 1:</strong> Ground Floor, M-41, Sector 12, Pratap Vihar, Ghaziabad, <br> <strong>Contact:</strong> +91 82876 80527</p>
+                        <br>
+                        <p><strong>Branch 2:</strong> Shop E-220, Sector 12, Vijay Nagar, Ghaziabad, <br> <strong>Contact:</strong> +91 98105 94805 / +91 98217 56547</p>
+                        <p class="pt-1 text-gold-400">Open Wed-Mon: 10:30 AM - 9:30 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centered Footer Bottom Lines -->
+            <div class="pt-6 text-center text-xs text-gray-400 space-y-1.5">
+                <p>&copy; 2026 Gorri Jewellers and Sons (GJS). All rights reserved.</p>
+                <p class="text-[11px]">Crafted with trust & honesty for Ghaziabad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const WA_NUMBER = "919821756547";
+        const IMG_DIR = "images/";
+
+        const CATALOG = {
+            "gold": {
+                "women": [
+                    {
+                        "title": "Necklaces & Haars",
+                        "items": [
+                            { "f": "Antique-necklace1.png", "t": "Antique Leaf Choker with Earrings", "tag": "Antique Gold", "w": 603, "h": 543 },
+                            { "f": "Antique-necklace2.png", "t": "Long Antique Haram with Temple Pendant", "tag": "Antique Gold", "w": 516, "h": 561 },
+                            { "f": "Antique-necklace3.png", "t": "Temple Pendant Set with Emerald Beads", "tag": "Antique Gold", "w": 415, "h": 462 },
+                            { "f": "Antique-necklace4.png", "t": "Bridal Choker with Pearl Drops", "tag": "Antique Gold", "w": 631, "h": 432 },
+                            { "f": "Antique-necklace5.png", "t": "Lakshmi Bridal Choker Set", "tag": "Antique Gold", "w": 543, "h": 627 },
+                            { "f": "Antique-necklace6.png", "t": "Long Antique Haar with Jhumkas", "tag": "Antique Gold", "w": 624, "h": 510 },
+                            { "f": "Antique-necklace7.png", "t": "Long Gold Haar with Pearl Pendant", "tag": "Antique Gold", "w": 421, "h": 541 },
+                            { "f": "Antique-necklace8.png", "t": "Layered Bridal Choker Set", "tag": "Antique Gold", "w": 1024, "h": 964 },
+                            { "f": "Antique-necklace9.png", "t": "Double-Layer Temple Necklace", "tag": "Antique Gold", "w": 815, "h": 1024 },
+                            { "f": "light-necklace1.png", "t": "Light Pendant Chain with Earrings", "tag": "Light Weight", "w": 1100, "h": 1100 },
+                            { "f": "light-necklace2.png", "t": "Light Fringe Necklace with Earrings", "tag": "Light Weight", "w": 416, "h": 761 },
+                            { "f": "light-necklace3.png", "t": "Light Long Necklace with Pendant", "tag": "Light Weight", "w": 413, "h": 770 }
+                        ]
+                    },
+                    {
+                        "title": "Rings",
+                        "items": [
+                            { "f": "ring10.png", "t": "Antique Ruby Flower Ring", "tag": "Antique Gold", "w": 296, "h": 182 },
+                            { "f": "ring2.png", "t": "Gold Bead Cocktail Ring", "tag": "Gold Ring", "w": 309, "h": 351 },
+                            { "f": "ring21.png", "t": "Light Filigree Ring", "tag": "Light Weight", "w": 447, "h": 447 },
+                            { "f": "ring22.png", "t": "Gold Jaali Ring", "tag": "Light Weight", "w": 447, "h": 447 },
+                            { "f": "ring23.png", "t": "Antique Gold Statement Ring", "tag": "Antique Gold", "w": 447, "h": 447 }
+                        ]
+                    },
+                    {
+                        "title": "Bangles & Kadas",
+                        "items": [
+                            { "f": "bangles1.png", "t": "Textured Gold Bangles (Pair)", "tag": "Gold Bangles", "w": 262, "h": 309 },
+                            { "f": "bangles2.png", "t": "Meenakari Gold Bangles", "tag": "Gold Bangles", "w": 344, "h": 268 },
+                            { "f": "bangles3.jpg", "t": "Antique Gold Kada", "tag": "Antique Gold", "w": 363, "h": 550 },
+                            { "f": "bangles4.jpg", "t": "Enamel Gold Bangle", "tag": "Gold Bangles", "w": 480, "h": 376 },
+                            { "f": "bangles5.jpg", "t": "Antique Nakshi Bangles", "tag": "Antique Gold", "w": 1024, "h": 1024 },
+                            { "f": "bangles6.png", "t": "Antique Peacock Bangles", "tag": "Antique Gold", "w": 653, "h": 528 }
+                        ]
+                    }
+                ],
+                "men": [
+                    {
+                        "title": "Kadas & Bracelets",
+                        "items": [
+                            { "f": "kda-men1.jpg", "t": "Gents Gold Kada with Engraved Pattern", "tag": "Gents Kada", "w": 1024, "h": 1024 },
+                            { "f": "kda-men2.jpg", "t": "Gents Gold Chain Bracelet", "tag": "Gents Bracelet", "w": 368, "h": 473 },
+                            { "f": "kda-men3.jpg", "t": "Gents Gold Kada with Key Pattern", "tag": "Gents Kada", "w": 262, "h": 350 },
+                            { "f": "kda-men4.jpg.png", "t": "Gents Plain Gold Kada", "tag": "Gents Kada", "w": 1254, "h": 1254 }
+                        ]
+                    }
+                ]
+            },
+            "diamond": {
+                "women": [
+                    {
+                        "title": "Necklaces & Sets",
+                        "items": [
+                            { "f": "Diamond-necklace1.png", "t": "Emerald Drop Diamond Necklace", "tag": "Light Diamond", "w": 330, "h": 250 },
+                            { "f": "Diamond-necklace2.png", "t": "Rose Gold Diamond Necklace", "tag": "Light Diamond", "w": 660, "h": 1024 },
+                            { "f": "Diamond-necklace3.png", "t": "Diamond Choker with Earrings", "tag": "Light Diamond", "w": 682, "h": 895 },
+                            { "f": "Diamond-necklace4.png", "t": "Layered Diamond Necklace with Earrings", "tag": "Diamond Set", "w": 682, "h": 1024 },
+                            { "f": "Diamond-necklace5.png", "t": "Diamond and Sapphire Necklace", "tag": "Light Diamond", "w": 742, "h": 870 },
+                            { "f": "Diamond-necklace6.png", "t": "Full Diamond Bridal Set", "tag": "Full Bridal Set", "w": 657, "h": 1024 },
+                            { "f": "Diamond-necklace7.png", "t": "Long Diamond Bridal Set with Emeralds", "tag": "Full Bridal Set", "w": 660, "h": 1024 }
+                        ]
+                    },
+                    {
+                        "title": "Rings",
+                        "items": [
+                            { "f": "ring1.png", "t": "Diamond Cluster Swirl Ring", "tag": "Diamond Ring", "w": 309, "h": 351 },
+                            { "f": "ring3.png", "t": "Floral Diamond Ring", "tag": "Diamond Ring", "w": 309, "h": 351 },
+                            { "f": "ring4.png", "t": "Diamond Crossover Ring", "tag": "Diamond Ring", "w": 309, "h": 351 },
+                            { "f": "ring5.png", "t": "Slim Diamond Band", "tag": "Diamond Ring", "w": 309, "h": 312 },
+                            { "f": "ring6.png", "t": "Rose Gold Diamond Cocktail Ring", "tag": "Diamond Ring", "w": 246, "h": 267 },
+                            { "f": "ring7.png", "t": "Tiered Diamond Cocktail Ring", "tag": "Diamond Ring", "w": 554, "h": 554 },
+                            { "f": "ring8.png", "t": "Halo Diamond Ring", "tag": "Diamond Ring", "w": 447, "h": 447 },
+                            { "f": "ring9.png", "t": "Two-Tone Square Diamond Ring", "tag": "Diamond Ring", "w": 450, "h": 600 },
+                            { "f": "ring11.png", "t": "Cushion Halo Diamond Ring", "tag": "Diamond Ring", "w": 450, "h": 450 }
+                        ]
+                    }
+                ],
+                "men": [
+                    {
+                        "title": "Gents Rings",
+                        "items": [
+                            { "f": "Gents_ring1.png", "t": "Gents Diamond Signet Ring", "tag": "Gents Diamond Ring", "w": 309, "h": 351 },
+                            { "f": "Gents_ring2.png", "t": "Gents Diamond Halo Band Ring", "tag": "Gents Diamond Ring", "w": 309, "h": 351 },
+                            { "f": "Gents_ring3.png", "t": "Gents Baguette Diamond Ring", "tag": "Gents Diamond Ring", "w": 450, "h": 465 },
+                            { "f": "Gents_ring4.png", "t": "Gents Solitaire Ring", "tag": "Gents Diamond Ring", "w": 447, "h": 447 },
+                            { "f": "Gents_ring5.png", "t": "Gents Diamond Band Ring", "tag": "Gents Diamond Ring", "w": 1600, "h": 1600 }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        const SILVER = [
+            {
+                "id": "bartan",
+                "label": "Bartan & Coins",
+                "intro": "Silver thali, glass, jug and bowl for puja and gifting, with silver coins.",
+                "items": [
+                    {
+                        "f": "silverCoins_Bartan.png",
+                        "t": "Silver Puja Set & Coins",
+                        "tag": "Silver Bartan",
+                        "w": 1536,
+                        "h": 1024,
+                        "d": "Silver thali, glass, jug and bowl for puja and gifting, with silver coins. Message us on WhatsApp for weight and today's price."
+                    }
+                ]
+            },
+            {
+                "id": "payals",
+                "label": "Payals",
+                "intro": "Silver payals in light and heavy designs.",
+                "items": [
+                    {
+                        "f": "Payals.png",
+                        "t": "Silver Payal Collection",
+                        "tag": "Silver Payal",
+                        "w": 1125,
+                        "h": 587,
+                        "d": "Silver payals in light and heavy designs. Message us on WhatsApp for weight and today's price."
+                    }
+                ]
+            }
+        ];
+
+        const HOME_TILES = [
+            { "f": "Antique-necklace5.png", "label": "Gold Jewellery", "sub": "Antique & Lightweight Collection", "metal": "gold", "gender": "women" },
+            { "f": "Diamond-necklace4.png", "label": "Diamond Jewellery", "sub": "Kisna Diamond Collection", "metal": "diamond", "gender": "women" },
+            { "f": "silverCoins_Bartan.png", "label": "Silver Collection", "sub": "Bartan, Coins & Payals", "metal": "silver", "gender": null, "pos": "30% center" }
+        ];
+
+        const METAL_LABEL = { gold: "Gold", diamond: "Diamond", silver: "Silver" };
+        const GENDER_LABEL = { women: "For Her", men: "For Him" };
+        const METAL_INTRO = {
+            gold: "Antique and lightweight collection for women and men.",
+            diamond: "Kisna diamond collection for women and men.",
+            silver: "Silver bartan and coins, and payals."
+        };
+
+        const state = { metal: "gold", gender: "women", silverSection: "" };
+        const $ = (id) => document.getElementById(id);
+        const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+        const gendersFor = (metal) => ["women", "men"].filter((g) => CATALOG[metal] && CATALOG[metal][g] && CATALOG[metal][g].length > 0);
+
+        function waLink(item, path) {
+            const text = `Hello Gorri Jewellers & Sons, I am interested in "${item.t}" (${path}). Please share details and price.`;
+            return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+        }
+
+        const chipBase = "shrink-0 px-4 py-2 rounded-full text-xs font-semibold transition-colors border cursor-pointer";
+        const chipOn = "bg-burgundy-900 text-gold-300 border-burgundy-900";
+        const chipOff = "bg-white text-burgundy-900 border-gold-500/40 hover:bg-gold-500/15";
+
+        function makeCard(item, path) {
+            const card = document.createElement("article");
+            card.className = "bg-white rounded-xl border border-gold-500/20 overflow-hidden shadow-sm flex flex-col h-full";
+            card.innerHTML = `
+                <button type="button" class="block w-full bg-creamDark overflow-hidden h-56 sm:h-64 flex items-center justify-center p-3" data-open aria-label="View ${esc(item.t)}">
+                    <img src="${IMG_DIR}${esc(item.f)}" alt="${esc(item.t)}" loading="lazy" decoding="async" class="w-full h-full object-contain mx-auto block">
+                </button>
+                <div class="p-4 space-y-3 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block text-[10px] font-semibold text-gold-700 bg-gold-500/15 px-2.5 py-0.5 rounded-full">${esc(item.tag)}</span>
+                        <h4 class="font-serif font-bold text-sm sm:text-base leading-snug text-burgundy-900 mt-1.5">
+                            <button type="button" data-open class="text-left hover:text-gold-700 transition-colors">${esc(item.t)}</button>
+                        </h4>
+                    </div>
+                    <a href="${waLink(item, path)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-800 pt-1">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Ask on WhatsApp
+                    </a>
+                </div>`;
+            card.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openModal(item, path)));
+            return card;
+        }
+
+        function makeGrid(items, path) {
+            const grid = document.createElement("div");
+            grid.className = "grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6";
+            items.forEach((item) => grid.appendChild(makeCard(item, path)));
+            return grid;
+        }
+
+        function renderMetal(sub, out) {
+            const genders = gendersFor(state.metal);
+            if (!genders.includes(state.gender)) state.gender = genders[0];
+
+            genders.forEach((g) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = `${chipBase} ${g === state.gender ? chipOn : chipOff}`;
+                btn.textContent = GENDER_LABEL[g];
+                btn.addEventListener("click", () => { state.gender = g; renderCollections(); });
+                sub.appendChild(btn);
+            });
+
+            const head = document.createElement("div");
+            head.className = "border-b border-gold-500/30 pb-4 mb-6";
+            head.innerHTML = `<h2 class="font-serif text-3xl font-bold text-burgundy-900 flex items-center gap-2">
+                    <i class="fa-solid ${state.metal === "gold" ? "fa-crown" : "fa-gem"} text-gold-600"></i>
+                    ${METAL_LABEL[state.metal]} Jewellery for ${GENDER_LABEL[state.gender]}</h2>
+                <p class="text-sm text-gray-600 mt-1">${esc(METAL_INTRO[state.metal])}</p>`;
+            out.appendChild(head);
+
+            const sections = CATALOG[state.metal][state.gender] || [];
+            sections.forEach((sec) => {
+                const secWrap = document.createElement("div");
+                secWrap.className = "mb-10";
+
+                const secHead = document.createElement("div");
+                secHead.className = "flex items-center gap-x-3 border-l-4 border-gold-500 pl-3 mb-5";
+                secHead.innerHTML = `<h3 class="font-serif text-xl sm:text-2xl font-bold text-burgundy-800">${esc(sec.title)}</h3>`;
+                secWrap.appendChild(secHead);
+
+                const path = `${METAL_LABEL[state.metal]}, ${GENDER_LABEL[state.gender]} - ${sec.title}`;
+                secWrap.appendChild(makeGrid(sec.items, path));
+                out.appendChild(secWrap);
+            });
+        }
+
+        function makeSilverFeature(sec, flip) {
+            const item = sec.items[0];
+            const path = `Silver, ${sec.label}`;
+            const box = document.createElement("div");
+            box.className = "grid grid-cols-1 lg:grid-cols-2 bg-white rounded-2xl border border-gold-500/20 overflow-hidden shadow-sm items-center";
+            box.innerHTML = `
+                <button type="button" data-open class="block bg-creamDark overflow-hidden p-6 h-80 sm:h-96 flex items-center justify-center ${flip ? "lg:order-2" : ""}" aria-label="View ${esc(item.t)}">
+                    <img src="${IMG_DIR}${esc(item.f)}" alt="${esc(item.t)}" loading="lazy" decoding="async" class="w-full h-full object-contain mx-auto block">
+                </button>
+                <div class="p-6 sm:p-10 flex flex-col justify-center gap-4">
+                    <span class="self-start text-[10px] font-semibold text-gold-700 bg-gold-500/15 px-2.5 py-0.5 rounded-full">${esc(item.tag)}</span>
+                    <h4 class="font-serif text-2xl sm:text-3xl font-bold text-burgundy-900">${esc(item.t)}</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-md">${esc(item.d || sec.intro)}</p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="${waLink(item, path)}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-lg text-xs transition-colors">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Ask for price on WhatsApp
+                        </a>
+                        <button type="button" data-open class="border border-gold-500/60 text-burgundy-900 hover:bg-gold-500/15 font-semibold px-5 py-2.5 rounded-lg text-xs transition-colors">View photo</button>
+                    </div>
+                </div>`;
+            box.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openModal(item, path)));
+            return box;
+        }
+
+        function renderSilver(sub, out) {
+            const sections = SILVER.filter((s) => s.items.length);
+            if (!state.silverSection && sections.length) {
+                state.silverSection = sections[0].id;
+            }
+
+            sections.forEach((sec) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                const isActive = state.silverSection === sec.id;
+                btn.className = `${chipBase} ${isActive ? chipOn : chipOff}`;
+                btn.textContent = sec.label;
+                btn.addEventListener("click", () => {
+                    state.silverSection = sec.id;
+                    sub.querySelectorAll("button").forEach((b, idx) => {
+                        const targetSec = sections[idx];
+                        const active = targetSec.id === sec.id;
+                        b.className = `${chipBase} ${active ? chipOn : chipOff}`;
+                    });
+                    const el = document.getElementById("silver-" + sec.id);
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                });
+                sub.appendChild(btn);
+            });
+
+            const head = document.createElement("div");
+            head.className = "border-b border-gold-500/30 pb-4 mb-6";
+            head.innerHTML = `<h2 class="font-serif text-3xl font-bold text-burgundy-900 flex items-center gap-2">
+                    <i class="fa-solid fa-coins text-gold-600"></i> Silver Collection</h2>
+                <p class="text-sm text-gray-600 mt-1">${esc(METAL_INTRO.silver)}</p>`;
+            out.appendChild(head);
+
+            sections.forEach((sec, i) => {
+                const section = document.createElement("section");
+                section.id = "silver-" + sec.id;
+                section.className = "scroll-mt-24 md:scroll-mt-52 mb-10";
+                
+                const wrap = document.createElement("div");
+                wrap.className = "flex flex-wrap items-baseline gap-x-3 gap-y-1 border-l-4 border-gold-500 pl-3 mb-6";
+                wrap.innerHTML = `<h3 class="font-serif text-2xl font-semibold text-burgundy-800">${esc(sec.label)}</h3>`;
+                section.appendChild(wrap);
+
+                section.appendChild(sec.items.length === 1 ? makeSilverFeature(sec, i % 2 === 1) : makeGrid(sec.items, `Silver, ${sec.label}`));
+                out.appendChild(section);
+            });
+        }
+
+        function renderCollections() {
+            document.querySelectorAll(".main-cat-tab").forEach((btn) => {
+                const on = btn.dataset.metal === state.metal;
+                btn.classList.toggle("bg-burgundy-900", on);
+                btn.classList.toggle("text-gold-300", on);
+                btn.classList.toggle("shadow", on);
+                btn.classList.toggle("bg-cream", !on);
+                btn.classList.toggle("text-burgundy-900", !on);
+                btn.classList.toggle("hover:bg-gold-500/20", !on);
+            });
+            const sub = $("sub-nav"), out = $("catalog");
+            sub.innerHTML = "";
+            out.innerHTML = "";
+            if (state.metal === "silver") renderSilver(sub, out); else renderMetal(sub, out);
+        }
+
+        function switchMainCategory(metal) {
+            state.metal = metal;
+            if (metal !== "silver") state.silverSection = "";
+            renderCollections();
+        }
+
+        function openCollection(metal, gender) {
+            state.metal = metal;
+            if (gender) state.gender = gender;
+            if (metal !== "silver") state.silverSection = "";
+            showPage("collections");
+            renderCollections();
+        }
+
+        function renderHomeTiles() {
+            const wrap = $("home-tiles");
+            HOME_TILES.forEach((tile) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "group relative overflow-hidden rounded-xl h-64 sm:h-80 text-left border border-gold-500/30 bg-burgundy-950 flex flex-col justify-end";
+                btn.innerHTML = `
+                    <img src="${IMG_DIR}${esc(tile.f)}" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="object-position:${tile.pos || "center"}">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950/90 via-burgundy-950/10 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="font-serif text-lg sm:text-xl font-semibold text-white block leading-snug">${esc(tile.label)}</span>
+                        <span class="text-xs text-gold-300 mt-0.5 block">${esc(tile.sub)}</span>
+                    </div>`;
+                btn.addEventListener("click", () => openCollection(tile.metal, tile.gender));
+                wrap.appendChild(btn);
+            });
+        }
+
+        function showPage(pageId, keepScroll) {
+            document.querySelectorAll(".page-section").forEach((p) => p.classList.add("hidden"));
+            const targetPage = $("page-" + pageId);
+            if (targetPage) targetPage.classList.remove("hidden");
+
+            document.querySelectorAll(".nav-btn").forEach((btn) => {
+                btn.classList.remove("text-gold-400", "border-gold-500");
+                btn.classList.add("text-gray-300", "border-transparent");
+            });
+            const activeBtn = $("nav-" + pageId);
+            if (activeBtn) {
+                activeBtn.classList.remove("text-gray-300", "border-transparent");
+                activeBtn.classList.add("text-gold-400", "border-gold-500");
+            }
+
+            if (pageId === "collections" && !$("catalog").children.length) renderCollections();
+            if (!keepScroll) window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function toggleMobileMenu() {
+            $("mobile-menu").classList.toggle("hidden");
+        }
+
+        let lastFocus = null;
+
+        function openModal(item, path) {
+            $("modal-img").src = IMG_DIR + item.f;
+            $("modal-img").alt = item.t;
+            $("modal-title").textContent = item.t;
+            $("modal-tag").textContent = item.tag;
+            $("modal-path").textContent = path;
+            $("modal-desc").textContent = item.d || "Visit our showroom or message us on WhatsApp for weight, purity and today's price.";
+            $("modal-wa-link").href = waLink(item, path);
+
+            lastFocus = document.activeElement;
+            const modal = $("product-modal");
+            modal.classList.add("flex");
+            modal.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+            $("modal-close").focus();
+        }
+
+        function closeModal() {
+            const modal = $("product-modal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            document.body.style.overflow = "";
+            if (lastFocus) lastFocus.focus();
+        }
+
+        $("product-modal").addEventListener("click", (e) => { if (e.target === e.currentTarget) closeModal(); });
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("product-modal").classList.contains("hidden")) closeModal(); });
+
+        renderHomeTiles();
+        renderCollections();
+    </script>
+</body>
+</html>
