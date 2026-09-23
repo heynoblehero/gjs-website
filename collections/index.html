@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewellery Collections | Gorri Jewellers & Sons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/resource/styles/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: { 800: '#3D0C13', 900: '#2C0E14', 950: '#1D080C' },
+                        gold: { 300: '#F3E5AB', 400: '#E6CA65', 500: '#D4AF37', 600: '#B89025', 700: '#916E13' },
+                        cream: '#FAF7F2', creamDark: '#F2EBDC',
+                    },
+                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream text-burgundy-900 antialiased selection:bg-gold-500 selection:text-white">
+	<header class="sticky top-0 z-50 bg-burgundy-950">
+		<div id="site-header"></div>	
+    </header>
+    <main>
+        <section class="bg-burgundy-950 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-gold-500/30 text-center">
+            <div class="max-w-4xl mx-auto space-y-3">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Exquisite Catalogue</span>
+                <h1 class="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text">Our Jewellery Collections</h1>
+                <p class="text-gray-300 text-xs sm:text-sm max-w-xl mx-auto font-light">
+                    Choose Gold, Diamond or Silver, then browse by women's and men's jewellery, necklaces, rings and bangles.
+                </p>
+            </div>
+        </section>
+
+        <section id="filter-bar" class="bg-white border-b border-gold-500/20 md:sticky md:top-28 z-30 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-3">
+                <div class="flex justify-center gap-2 sm:gap-4">
+                    <button data-metal="gold" onclick="switchMainCategory('gold')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Gold</button>
+                    <button data-metal="diamond" onclick="switchMainCategory('diamond')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Diamond</button>
+                    <button data-metal="silver" onclick="switchMainCategory('silver')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Silver</button>
+                </div>
+                <div id="sub-nav" class="flex items-center gap-2 overflow-x-auto no-scrollbar whitespace-nowrap sm:justify-center"></div>
+            </div>
+        </section>
+
+        <div id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-14"></div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <div id="product-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative border border-gold-500/30">
+            <button id="modal-close" onclick="closeModal()" aria-label="Close" class="absolute top-3 right-3 text-gray-600 hover:text-black w-9 h-9 rounded-full bg-white/90 flex items-center justify-center z-10 shadow">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="bg-creamDark flex items-center justify-center">
+                    <img id="modal-img" src="" alt="" class="w-full max-h-[60vh] md:max-h-[80vh] object-contain">
+                </div>
+                <div class="p-6 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span id="modal-tag" class="text-[10px] uppercase font-bold text-gold-700 bg-gold-500/20 px-2.5 py-0.5 rounded-full">Category</span>
+                        <h3 id="modal-title" class="font-serif text-2xl font-bold text-burgundy-900 mt-2">Item Name</h3>
+                        <p id="modal-path" class="text-xs text-gold-700 mt-1"></p>
+                        <p id="modal-desc" class="text-sm text-gray-600 mt-3 leading-relaxed">Description</p>
+                    </div>
+                    <div class="space-y-2 pt-3 border-t border-gray-100">
+                        <a id="modal-wa-link" href="#" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-lg text-xs flex items-center justify-center space-x-2 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Ask for price on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="/resource/scripts/data.js"></script>
+<script src="/resource/scripts/main.js"></script>
+    <script>
+        injectCommonLayouts('collections');
+        const urlParams = new URLSearchParams(window.location.search);
+        const m = urlParams.get('metal');
+        const g = urlParams.get('gender');
+        if (m) state.metal = m;
+        if (g) state.gender = g;
+        renderCollections();
+    </script>
+</body>
+</html>

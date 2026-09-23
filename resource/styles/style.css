@@ -1,0 +1,29 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FAF7F2;
+    color: #2C0E14;
+}
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+.gold-gradient-text {
+    background: linear-gradient(135deg, #FFE89C 0%, #D4AF37 50%, #916E13 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bg-pattern {
+    background-color: #2C0E14;
+    background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #2C0E14 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+button:focus-visible, a:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+}
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    * { transition-duration: 0.01ms !important; }
+}
