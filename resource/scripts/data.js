@@ -1,5 +1,5 @@
 const WA_NUMBER = "919821756547";
-const IMG_DIR = "/resource/images/";
+const IMG_DIR = "resource/images/";
 
 const CATALOG = {
     "gold": {

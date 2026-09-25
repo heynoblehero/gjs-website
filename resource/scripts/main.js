@@ -29,7 +29,7 @@ function injectCommonLayouts(activePage) {
                 <div class="flex items-center justify-between h-20">
                     <a href="/" class="flex items-center space-x-3 group">
                         <div class="relative w-20 sm:w-24 h-auto flex items-center justify-center">
-                            <img src="/resource/images/Logo-removebg.png" alt="Gorri Jewellers and Sons Logo" class="w-full h-full object-contain">
+                            <img src="/resource/images/Logo.png" alt="Gorri Jewellers and Sons Logo" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <span class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text">Gorri Jewellers & Sons</span>
@@ -69,56 +69,88 @@ function injectCommonLayouts(activePage) {
             </div>`;
 }
     const footerEl = document.getElementById("site-footer");
-    if (footerEl) {
-        footerEl.innerHTML = `
-        <footer class="bg-burgundy-950 text-white border-t border-gold-500/30 pt-12 pb-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-gold-500/20">
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-8 h-8 rounded-full border border-gold-500 flex items-center justify-center bg-burgundy-900">
-                                <span class="font-serif font-bold text-gold-400 text-xs">GJS</span>
+if (footerEl) {
+    footerEl.innerHTML = `
+    <footer class="bg-burgundy-950 text-white border-t border-gold-500/30 pt-8 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 3 Clean Main Columns Layout with Fixed Spacing -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-4 pb-4 border-b border-gold-500/25 items-start">
+                
+                <!-- Column 1: Brand Info & Timings nicely placed here -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-full border border-gold-500 flex items-center justify-center bg-burgundy-900 shrink-0">
+						<img src="/resource/images/GJS-SecondLogo.png" alt="Gorri Jewellers and Sons Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-serif text-lg font-bold gold-gradient-text">Gorri Jewellers & Sons</span>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed font-light">
+                        Ghaziabad's premier destination for 100% hallmarked gold, Kisna diamonds, antique jewellery, and silver ornaments with flat 8% making charges.
+                    </p>
+                    <div class="pt-1">
+                        <span class="inline-block text-xs text-gold-400 font-medium bg-gold-500/10 px-3 py-2 rounded border border-gold-500/20">
+                            <i class="fa-regular fa-clock mr-1"></i> Open Wed-Mon: 10:30 AM - 9:30 PM
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation & Collections Side-by-Side -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <h4 class="font-serif font-bold text-gold-300 text-sm mb-3 pb-1 border-b border-gold-500/30 inline-block">Navigation</h4>
+                        <ul class="space-y-3 text-xs text-gray-300">
+                            <li><a href="/" class="hover:text-gold-400 block transition-transform duration-200 hover:translate-x-1 py-0.5">Home Page</a></li>
+                            <li><a href="/about/" class="hover:text-gold-400 block transition-transform duration-200 hover:translate-x-1 py-0.5">Our Heritage</a></li>
+                            <li><a href="/collections/" class="hover:text-gold-400 block transition-transform duration-200 hover:translate-x-1 py-0.5">Jewellery Catalog</a></li>
+                            <li><a href="/stores/" class="hover:text-gold-400 block transition-transform duration-200 hover:translate-x-1 py-0.5">Showrooms</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-serif font-bold text-gold-300 text-sm mb-3 pb-1 border-b border-gold-500/30 inline-block">Collections</h4>
+                        <ul class="space-y-3 text-xs text-gray-300">
+                            <li>
+							<button onclick="openCollection('gold')" class="hover:text-gold-400 block transition-transform duration-200 hover:translate-x-1 py-0.5">Gold Jewellery</button>
+							<button onclick="openCollection('diamond')" class="hover:text-gold-400 block transition-transform duration-200 hover:translate-x-1 py-0.5">Diamond Collection</button>
+							<button onclick="openCollection('silver')" class="hover:text-gold-400 block transition-transform duration-200 hover:translate-x-1 py-0.5">Silver Ornaments</button>
+							
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Showroom Locations -->
+                <div class="space-y-4">
+                    <h4 class="font-serif font-bold text-gold-300 text-sm mb-3 pb-1 border-b border-gold-500/30 inline-block">Showroom Locations</h4>
+                    <div class="space-y-3 text-xs text-gray-300">
+                        <div>
+                            <strong class="text-gold-300 block mb-0.5">Pratap Vihar</strong>
+                            <p class="text-gray-400">Ground Floor, M-41, Sector 12, Pratap Vihar, Ghaziabad</p>
+                            <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                <a href="tel:+918287680527" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-400 mr-1"></i> +91 82876 80527</a>
+                                <a href="https://maps.google.com/?q=Ground+Floor+M-41+Sector+12+Pratap+Vihar+Ghaziabad" target="_blank" rel="noopener" class="text-gold-400 hover:underline inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Map</a>
                             </div>
-                            <span class="font-serif text-lg font-bold gold-gradient-text">Gorri Jewellers & Sons</span>
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed font-light">
-                            Ghaziabad's premier destination for 100% hallmarked gold, Kisna diamonds, antique jewellery, and silver ornaments with flat 8% making charges.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="font-serif font-bold text-gold-300 text-sm mb-3">Quick Navigation</h4>
-                        <ul class="space-y-2 text-xs text-gray-300">
-                            <li><a href="/" class="hover:text-gold-400">Home Page</a></li>
-                            <li><a href="/about/" class="hover:text-gold-400">Our 45-Year Heritage</a></li>
-                            <li><a href="/collections/" class="hover:text-gold-400">Jewellery Catalog</a></li>
-                            <li><a href="/stores/" class="hover:text-gold-400">Showrooms & Directions</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-serif font-bold text-gold-300 text-sm mb-3">Our Collections</h4>
-                        <ul class="space-y-2 text-xs text-gray-300">
-                            <li><a href="/collections/" class="hover:text-gold-400">Antique and Plain Gold Collection</a></li>
-                            <li><a href="/collections/" class="hover:text-gold-400">Diamond Collection</a></li>
-                            <li><a href="/collections/" class="hover:text-gold-400">Silver Collection</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-serif font-bold text-gold-300 text-sm mb-3">Showroom Locations</h4>
-                        <div class="space-y-2 text-xs text-gray-200">
-                            <p><strong>Branch 1:</strong> Ground Floor, M-41, Sector 12, Pratap Vihar, Ghaziabad, <br> <strong>Contact:</strong> +91 82876 80527</p>
-                            <br>
-                            <p><strong>Branch 2:</strong> Shop E-220, Sector 12, Vijay Nagar, Ghaziabad, <br> <strong>Contact:</strong> +91 98105 94805 / +91 98217 56547</p>
-                            <p class="pt-1 text-gold-400">Open Wed-Mon: 10:30 AM - 9:30 PM</p>
+                        <div>
+                            <strong class="text-gold-300 block mb-0.5">Vijay Nagar</strong>
+                            <p class="text-gray-400">Shop E-220, Sector 12, Vijay Nagar, Ghaziabad</p>
+                            <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                <a href="tel:+919810594805" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-400 mr-1"></i> +91 98105 94805</a>
+                                <a href="tel:+919821756547" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-400 mr-1"></i> +91 98217 56547</a>
+                                <a href="https://maps.google.com/?q=Shop+E-220+Sector+12+Vijay+Nagar+Ghaziabad" target="_blank" rel="noopener" class="text-gold-400 hover:underline inline-flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> Map</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="pt-6 text-center text-xs text-gray-400 space-y-1.5">
-                    <p>&copy; 2026 Gorri Jewellers and Sons (GJS). All rights reserved.</p>
-                    <p class="text-[11px]">Crafted with trust & honesty for Ghaziabad.</p>
-                </div>
+
             </div>
-        </footer>`;
-    }
+
+            <!-- Copyright Section -->
+            <div class="pt-6 text-center text-xs text-gray-400 space-y-1.5">
+                <p>&copy; 2026 Gorri Jewellers and Sons (GJS). All rights reserved.</p>
+                <p class="text-[11px]">Crafted with trust & honesty.</p>
+            </div>
+        </div>
+    </footer>`;
+}
 }
 
 function waLink(item, path) {
