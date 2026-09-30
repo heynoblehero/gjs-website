@@ -235,20 +235,24 @@ function renderMetal(sub, out) {
 }
 
 function renderSearchResults(out) {
-    const query = state.query.trim().toLocaleLowerCase();
+    const terms = state.query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    const matches = (item, path) => {
+        const text = `${item.t} ${item.tag} ${path}`.toLocaleLowerCase();
+        return terms.every(term => text.includes(term));
+    };
     const groups = [];
     for (const metal of ["gold", "diamond"]) {
         for (const gender of gendersFor(metal)) {
             for (const sec of CATALOG[metal][gender]) {
                 const path = `${METAL_LABEL[metal]}, ${GENDER_LABEL[gender]} - ${sec.title}`;
-                const items = sec.items.filter(item => `${item.t} ${item.tag} ${path}`.toLocaleLowerCase().includes(query));
+                const items = sec.items.filter(item => matches(item, path));
                 if (items.length) groups.push({path, items});
             }
         }
     }
     for (const sec of SILVER) {
         const path = `Silver, ${sec.label}`;
-        const items = sec.items.filter(item => `${item.t} ${item.tag} ${path}`.toLocaleLowerCase().includes(query));
+        const items = sec.items.filter(item => matches(item, path));
         if (items.length) groups.push({path, items});
     }
     const count = groups.reduce((total, group) => total + group.items.length, 0);
