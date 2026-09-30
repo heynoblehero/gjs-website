@@ -1,4 +1,4 @@
-const state = { metal: "gold", gender: "women", silverSection: "", section: "" };
+const state = { metal: "gold", gender: "women", silverSection: "", section: "", query: "" };
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -60,14 +60,16 @@ function injectCommonLayouts(activePage) {
                 <a href="about.html" class="block w-full text-left py-2 px-3 rounded-md text-gray-200 font-medium hover:bg-burgundy-900">About Us</a>
                 <a href="collections.html" class="block w-full text-left py-2 px-3 rounded-md text-gray-200 font-medium hover:bg-burgundy-900">Jewellery Collections</a>
                 <a href="stores.html" class="block w-full text-left py-2 px-3 rounded-md text-gray-200 font-medium hover:bg-burgundy-900">Our Stores & Directions</a>
-                <div class="pt-2 border-t border-gold-500/20 flex flex-col gap-2">
-                    <a href="https://wa.me/919821756547?text=Hello%20GJS%20Jewellers,%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection." target="_blank" rel="noopener" class="flex items-center justify-center space-x-2 bg-emerald-600 text-white py-2.5 rounded-lg text-sm font-semibold">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>Connect on WhatsApp</span>
-                    </a>
-                </div>
             </div>`;
 }
+    const actionBar = document.createElement("nav");
+    actionBar.className = "mobile-action-bar md:hidden";
+    actionBar.setAttribute("aria-label", "Quick showroom actions");
+    actionBar.innerHTML = `
+        <a href="tel:+918287680527"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>Call</span></a>
+        <a href="stores.html#pratap-vihar"><i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i><span>Directions</span></a>
+        <a href="https://wa.me/919821756547?text=Hello%20GJS%20Jewellers%2C%20I%20would%20like%20to%20ask%20about%20your%20jewellery%20collection." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>`;
+    document.body.appendChild(actionBar);
     const footerEl = document.getElementById("site-footer");
 if (footerEl) {
     footerEl.innerHTML = `
@@ -144,7 +146,7 @@ if (footerEl) {
             <!-- Copyright Section -->
             <div class="pt-6 text-center text-xs text-gray-400 space-y-1.5">
                 <p>&copy; 2026 Gorri Jewellers and Sons (GJS). All rights reserved.</p>
-                <p class="text-[11px]">Crafted with trust & honesty.</p>
+                <p class="text-[11px]">Crafted with trust & honesty. <a href="image-credits.html" class="text-gold-300 underline">Image credits</a></p>
             </div>
         </div>
     </footer>`;
@@ -162,7 +164,7 @@ const chipOff = "bg-white text-burgundy-900 border-gold-500/40 hover:bg-gold-500
 
 function makeCard(item, path) {
     const card = document.createElement("article");
-    card.className = "bg-white rounded-xl border border-gold-500/20 overflow-hidden shadow-sm flex flex-col h-full hover:shadow-lg hover:scale-105 transition-transform";
+    card.className = "catalog-card bg-white rounded-xl border border-gold-500/20 overflow-hidden shadow-sm flex flex-col h-full";
     card.innerHTML = `
         <button type="button" class="block w-full bg-creamDark overflow-hidden h-56 sm:h-64 flex items-center justify-center p-3" data-open aria-label="View ${esc(item.t)}">
             <img src="${IMG_DIR}${esc(item.f)}" alt="${esc(item.t)}" loading="lazy" decoding="async" class="w-full h-full object-contain mx-auto block">
@@ -175,7 +177,7 @@ function makeCard(item, path) {
                 </h4>
             </div>
             <a href="${waLink(item, path)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-800 pt-1">
-                <i class="fa-brands fa-whatsapp text-base"></i> Ask on WhatsApp
+                <i class="fa-brands fa-whatsapp text-base"></i> Ask about this design
             </a>
         </div>`;
     card.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("click", () => openModal(item, path)));
@@ -194,60 +196,74 @@ function gendersFor(metal) { return ["women", "men"].filter((g) => CATALOG[metal
 function renderMetal(sub, out) {
     const genders = gendersFor(state.metal);
     if (!genders.includes(state.gender)) state.gender = genders[0];
-
     genders.forEach((g) => {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = `${chipBase} ${g === state.gender ? chipOn : chipOff}`;
         btn.textContent = GENDER_LABEL[g];
+        btn.setAttribute("aria-pressed", String(g === state.gender));
         btn.addEventListener("click", () => { state.gender = g; state.section = ""; renderCollections(); });
         sub.appendChild(btn);
     });
-
     const sections = CATALOG[state.metal][state.gender] || [];
-
-    // Third row: one chip per sub-category (Necklaces, Chains, Rings, ...).
-    // Only the selected section's grid is rendered below, so the page stays short
-    // even when a metal+gender has many sections.
     const secNav = $("section-nav");
     if (secNav) {
-        secNav.innerHTML = "";
-        if (!sections.some((s) => s.title === state.section)) {
-            state.section = sections.length ? sections[0].title : "";
-        }
+        if (!sections.some((sec) => sec.title === state.section)) state.section = sections[0]?.title || "";
         sections.forEach((sec) => {
             const btn = document.createElement("button");
             btn.type = "button";
-            const isActive = sec.title === state.section;
-            btn.className = `${chipBase} text-[11px] ${isActive ? chipOn : chipOff}`;
+            const active = sec.title === state.section;
+            btn.className = `${chipBase} text-[11px] ${active ? chipOn : chipOff}`;
             btn.textContent = `${sec.title} (${sec.items.length})`;
+            btn.setAttribute("aria-pressed", String(active));
             btn.addEventListener("click", () => { state.section = sec.title; renderCollections(); });
             secNav.appendChild(btn);
         });
     }
-
     const head = document.createElement("div");
     head.className = "border-b border-gold-500/30 pb-4 mb-6";
-    head.innerHTML = `<h2 class="font-serif text-3xl font-bold text-burgundy-900 flex items-center gap-2">
-            <i class="fa-solid ${state.metal === "gold" ? "fa-crown" : "fa-gem"} text-gold-600"></i>
-            ${METAL_LABEL[state.metal]} Jewellery for ${GENDER_LABEL[state.gender]}</h2>
+    head.innerHTML = `<h2 class="font-serif text-3xl font-bold text-burgundy-900">${esc(METAL_LABEL[state.metal])} Jewellery ${esc(GENDER_LABEL[state.gender])}</h2>
         <p class="text-sm text-gray-600 mt-1">${esc(METAL_INTRO[state.metal])}</p>`;
     out.appendChild(head);
-
-    const activeSection = sections.find((s) => s.title === state.section) || sections[0];
+    const activeSection = sections.find((sec) => sec.title === state.section);
     if (activeSection) {
-        const secWrap = document.createElement("div");
-        secWrap.className = "mb-4";
-        const secHead = document.createElement("div");
-        secHead.className = "flex items-center gap-x-3 border-l-4 border-gold-500 pl-3 mb-5";
-        secHead.innerHTML = `<h3 class="font-serif text-xl sm:text-2xl font-bold text-burgundy-800">${esc(activeSection.title)}</h3>`;
-        secWrap.appendChild(secHead);
-        const path = `${METAL_LABEL[state.metal]}, ${GENDER_LABEL[state.gender]} - ${activeSection.title}`;
-        secWrap.appendChild(makeGrid(activeSection.items, path));
-        out.appendChild(secWrap);
-    } else {
-        out.insertAdjacentHTML("beforeend", `<p class="text-sm text-gray-500">Is category mein abhi items nahi hain.</p>`);
+        const wrap = document.createElement("section");
+        wrap.innerHTML = `<h3 class="font-serif text-xl sm:text-2xl font-bold text-burgundy-800 border-l-4 border-gold-500 pl-3 mb-5">${esc(activeSection.title)}</h3>`;
+        wrap.appendChild(makeGrid(activeSection.items, `${METAL_LABEL[state.metal]}, ${GENDER_LABEL[state.gender]} - ${activeSection.title}`));
+        out.appendChild(wrap);
     }
+}
+
+function renderSearchResults(out) {
+    const query = state.query.trim().toLocaleLowerCase();
+    const groups = [];
+    for (const metal of ["gold", "diamond"]) {
+        for (const gender of gendersFor(metal)) {
+            for (const sec of CATALOG[metal][gender]) {
+                const path = `${METAL_LABEL[metal]}, ${GENDER_LABEL[gender]} - ${sec.title}`;
+                const items = sec.items.filter(item => `${item.t} ${item.tag} ${path}`.toLocaleLowerCase().includes(query));
+                if (items.length) groups.push({path, items});
+            }
+        }
+    }
+    for (const sec of SILVER) {
+        const path = `Silver, ${sec.label}`;
+        const items = sec.items.filter(item => `${item.t} ${item.tag} ${path}`.toLocaleLowerCase().includes(query));
+        if (items.length) groups.push({path, items});
+    }
+    const count = groups.reduce((total, group) => total + group.items.length, 0);
+    const heading = document.createElement("div");
+    heading.innerHTML = `<h2 class="font-serif text-2xl sm:text-3xl font-bold text-burgundy-900">Search results</h2><p class="text-sm text-gray-600 mt-1">${count} design${count === 1 ? "" : "s"} for “${esc(state.query.trim())}”</p>`;
+    out.appendChild(heading);
+    for (const group of groups) {
+        const section = document.createElement("section");
+        section.innerHTML = `<h3 class="font-serif text-xl font-bold text-burgundy-800 border-l-4 border-gold-500 pl-3 mb-5">${esc(group.path)}</h3>`;
+        section.appendChild(makeGrid(group.items, group.path));
+        out.appendChild(section);
+    }
+    if (!count) out.insertAdjacentHTML("beforeend", '<p class="catalog-empty">No designs found. Try another design name or category.</p>');
+    const status = $("catalog-search-status");
+    if (status) status.textContent = `${count} catalogue designs found`;
 }
 
 function makeSilverFeature(sec, flip) {
@@ -265,7 +281,7 @@ function makeSilverFeature(sec, flip) {
             <p class="text-sm text-gray-600 leading-relaxed max-w-md">${esc(item.d || sec.intro)}</p>
             <div class="flex flex-wrap gap-3 pt-2">
                 <a href="${waLink(item, path)}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-lg text-xs transition-colors">
-                    <i class="fa-brands fa-whatsapp text-base"></i> Ask for price on WhatsApp
+                    <i class="fa-brands fa-whatsapp text-base"></i> Ask about this design
                 </a>
                 <button type="button" data-open class="border border-gold-500/60 text-burgundy-900 hover:bg-gold-500/15 font-semibold px-5 py-2.5 rounded-lg text-xs transition-colors">View photo</button>
             </div>
@@ -284,15 +300,17 @@ function renderSilver(sub, out) {
         const isActive = state.silverSection === sec.id;
         btn.className = `${chipBase} ${isActive ? chipOn : chipOff}`;
         btn.textContent = sec.label;
+        btn.setAttribute("aria-pressed", String(isActive));
         btn.addEventListener("click", () => {
             state.silverSection = sec.id;
             sub.querySelectorAll("button").forEach((b, idx) => {
                 const targetSec = sections[idx];
                 const active = targetSec.id === sec.id;
                 b.className = `${chipBase} ${active ? chipOn : chipOff}`;
+                b.setAttribute("aria-pressed", String(active));
             });
             const el = document.getElementById("silver-" + sec.id);
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (el) el.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
         });
         sub.appendChild(btn);
     });
@@ -318,8 +336,17 @@ function renderSilver(sub, out) {
 }
 
 function renderCollections() {
+    const searching = Boolean(state.query.trim());
+    const sub = $("sub-nav"), out = $("catalog"), secNav = $("section-nav");
+    if (!sub || !out) return;
+    $("metal-tabs")?.classList.toggle("hidden", searching);
+    sub.classList.toggle("hidden", searching);
+    secNav?.classList.toggle("hidden", searching || state.metal === "silver");
+    const clear = $("clear-catalog-search");
+    if (clear) clear.hidden = !searching;
     document.querySelectorAll(".main-cat-tab").forEach((btn) => {
         const on = btn.dataset.metal === state.metal;
+        btn.setAttribute("aria-pressed", String(on));
         btn.classList.toggle("bg-burgundy-900", on);
         btn.classList.toggle("text-gold-300", on);
         btn.classList.toggle("shadow", on);
@@ -327,18 +354,12 @@ function renderCollections() {
         btn.classList.toggle("text-burgundy-900", !on);
         btn.classList.toggle("hover:bg-gold-500/20", !on);
     });
-    const sub = $("sub-nav"), out = $("catalog"), secNav = $("section-nav");
-    if (!sub || !out) return;
-    sub.innerHTML = "";
-    out.innerHTML = "";
-    if (secNav) secNav.innerHTML = "";
-    if (state.metal === "silver") {
-        if (secNav) secNav.classList.add("hidden");
-        renderSilver(sub, out);
-    } else {
-        if (secNav) secNav.classList.remove("hidden");
-        renderMetal(sub, out);
-    }
+    sub.replaceChildren();
+    out.replaceChildren();
+    secNav?.replaceChildren();
+    if (searching) renderSearchResults(out);
+    else if (state.metal === "silver") renderSilver(sub, out);
+    else renderMetal(sub, out);
 }
 
 function switchMainCategory(metal) {
@@ -357,7 +378,6 @@ function renderHomeTiles() {
     if (!wrap) return;
     HOME_TILES.forEach((tile) => {
         const btn = document.createElement("button");
-        btn.type.metal = tile.metal;
         btn.type = "button";
         btn.className = "group relative overflow-hidden rounded-xl h-64 sm:h-80 text-left border border-gold-500/30 bg-burgundy-950 flex flex-col justify-end";
         btn.innerHTML = `
@@ -380,6 +400,13 @@ function toggleMobileMenu() {
     menu.classList.toggle("hidden", !isOpening);
     button.setAttribute("aria-expanded", String(isOpening));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const search = $("catalog-search");
+    const clear = $("clear-catalog-search");
+    search?.addEventListener("input", () => { state.query = search.value; renderCollections(); });
+    clear?.addEventListener("click", () => { state.query = ""; search.value = ""; renderCollections(); search.focus(); });
+});
 
 let lastFocus = null;
 
@@ -419,5 +446,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("keydown", (e) => {
     const modal = $("product-modal");
-    if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) closeModal();
+    if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) { closeModal(); return; }
+    const menu = $("mobile-menu"), menuButton = $("mobile-menu-btn");
+    if (e.key === "Escape" && menu && !menu.classList.contains("hidden")) {
+        menu.classList.add("hidden"); menuButton.setAttribute("aria-expanded", "false"); menuButton.focus();
+    }
+    if (e.key === "Tab" && modal && !modal.classList.contains("hidden")) {
+        const focusables = [...modal.querySelectorAll('a[href], button:not([disabled])')];
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
 });

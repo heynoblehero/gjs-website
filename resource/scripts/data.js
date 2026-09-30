@@ -208,7 +208,7 @@ const SILVER = [
 
 const HOME_TILES = [
     { "f": "gold/Women/Necklaces/Antique-necklace5.webp", "label": "Gold Jewellery", "sub": "Antique & Lightweight Collection", "metal": "gold", "gender": "women" },
-    { "f": "Diamond/Women/Necklaces/Diamond-necklace4.webp", "label": "Diamond Jewellery", "sub": "Kisna Diamond Collection", "metal": "diamond", "gender": "women" },
+    { "f": "Diamond/Women/Necklaces/Diamond-necklace4.webp", "label": "Diamond Jewellery", "sub": "Diamond design inspirations", "metal": "diamond", "gender": "women" },
     { "f": "Silver/Bartan/silverCoins_Bartan.webp", "label": "Silver Collection", "sub": "Bartan, Coins & Payals", "metal": "silver", "gender": null, "pos": "30% center" }
 ];
 
@@ -216,6 +216,187 @@ const METAL_LABEL = { gold: "Gold", diamond: "Diamond", silver: "Silver" };
 const GENDER_LABEL = { women: "For Her", men: "For Him" };
 const METAL_INTRO = {
     gold: "Antique and lightweight collection for women and men.",
-    diamond: "Kisna diamond collection for women and men.",
+    diamond: "Diamond design references for women and men. Ask GJS about available Kisna pieces.",
     silver: "Silver bartan and coins, and payals."
+};// Commercially reusable design-reference photography; source and license in image-sources.json.
+const LICENSED_DESIGNS = {
+  "gold/Women/Earrings": [
+    {
+      "f": "licensed/01-earrings-c584.webp",
+      "t": "Chandbali Gold Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/02-earrings-c588.webp",
+      "t": "Pearl Drop Gold Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/03-earrings-c610.webp",
+      "t": "Gold and Pearl Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/04-earrings-c613.webp",
+      "t": "Dogri Jhumka Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/05-earrings-c617.webp",
+      "t": "Traditional Gold Jhumkas",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/06-earrings-c618.webp",
+      "t": "Floral Gold Jhumkas",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/07-earrings-c633.webp",
+      "t": "Golden Dogri Jhumkas",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/08-earrings-c640.webp",
+      "t": "Kantaali Gold Earring",
+      "tag": "Earrings"
+    }
+  ],
+  "gold/Women/Necklaces": [
+    {
+      "f": "licensed/09-necklaces-c301.webp",
+      "t": "Dogri Gold Necklace",
+      "tag": "Necklaces"
+    },
+    {
+      "f": "licensed/10-necklaces-c302.webp",
+      "t": "Dogri Rani Haar",
+      "tag": "Necklaces"
+    },
+    {
+      "f": "licensed/11-necklaces-c350.webp",
+      "t": "Himachali Meenakari Necklace",
+      "tag": "Necklaces"
+    }
+  ],
+  "Silver/Payal": [
+    {
+      "f": "licensed/12-payal-c116.webp",
+      "t": "Silver Loop Anklets",
+      "tag": "Payal"
+    },
+    {
+      "f": "licensed/13-payal-c118.webp",
+      "t": "Silver Bead Anklets",
+      "tag": "Payal"
+    }
+  ],
+  "Silver/Bangles": [
+    {
+      "f": "licensed/14-bangles-c249.webp",
+      "t": "Traditional Silver Wristlet",
+      "tag": "Bangles"
+    },
+    {
+      "f": "licensed/15-bangles-c252.webp",
+      "t": "Haryanvi Silver Bangles",
+      "tag": "Bangles"
+    }
+  ],
+  "Silver/Rings": [
+    {
+      "f": "licensed/16-rings-o61.webp",
+      "t": "Blue Stone Silver Ring",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/17-rings-o68.webp",
+      "t": "Geometric Silver Ring",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/18-rings-o69.webp",
+      "t": "Turquoise Silver Rings",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/19-rings-o70.webp",
+      "t": "Blue Topaz Silver Ring",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/20-rings-o73.webp",
+      "t": "Textured Silver Statement Ring",
+      "tag": "Rings"
+    }
+  ],
+  "Diamond/Women/Earrings": [
+    {
+      "f": "licensed/21-earrings-o26.webp",
+      "t": "Diamond Twist Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/22-earrings-o28.webp",
+      "t": "Diamond Drop Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/23-earrings-o32.webp",
+      "t": "Diamond Leaf Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/24-earrings-o34.webp",
+      "t": "Diamond Curve Earrings",
+      "tag": "Earrings"
+    },
+    {
+      "f": "licensed/25-earrings-o36.webp",
+      "t": "White Gold Diamond Drops",
+      "tag": "Earrings"
+    }
+  ],
+  "Diamond/Women/Rings": [
+    {
+      "f": "licensed/26-rings-c418.webp",
+      "t": "Classic Solitaire Diamond Ring",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/27-rings-c423.webp",
+      "t": "Diamond Cluster Ring",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/28-rings-c428.webp",
+      "t": "Ruby and Diamond Band",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/29-rings-c435.webp",
+      "t": "Refined Diamond Ring",
+      "tag": "Rings"
+    },
+    {
+      "f": "licensed/30-rings-c485.webp",
+      "t": "Half Eternity Diamond Ring",
+      "tag": "Rings"
+    }
+  ]
 };
+for (const [category, designs] of Object.entries(LICENSED_DESIGNS)) {
+    const [metal, wearer, subsection] = category.split("/");
+    const section = metal === "Silver" ? wearer : (metal === "gold" && subsection === "Necklaces" ? "Necklaces & Haars" : subsection);
+    if (metal === "Silver") {
+        const id = section === "Payal" ? "payals" : section.toLowerCase();
+        let target = SILVER.find((entry) => entry.id === id);
+        if (!target) { target = { id, label: section, intro: `Explore ${section.toLowerCase()} design references.`, items: [] }; SILVER.push(target); }
+        target.items.push(...designs);
+    } else {
+        const sections = CATALOG[metal.toLowerCase()][wearer.toLowerCase()];
+        let target = sections.find((entry) => entry.title === section);
+        if (!target) { target = { title: section, items: [] }; sections.push(target); }
+        target.items.push(...designs);
+    }
+}
