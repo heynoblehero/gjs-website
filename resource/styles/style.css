@@ -2,8 +2,6 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #FAF7F2;
     color: #2C0E14;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
 }
 .font-serif {
     font-family: 'Playfair Display', serif;
@@ -23,53 +21,9 @@ button:focus-visible, a:focus-visible {
     outline: 2px solid #D4AF37;
     outline-offset: 2px;
 }
-input:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
-.catalog-search-wrap { display: flex; align-items: center; gap: .75rem; border: 1px solid rgba(128,91,24,.3); background: #fff; border-radius: 999px; padding: .7rem 1rem; box-shadow: 0 4px 18px rgba(44,14,20,.06); }
-.catalog-search-wrap > i { color: #916e13; }
-.catalog-search-wrap input { min-width: 0; flex: 1; border: 0; outline: 0; color: #2c0e14; background: transparent; font-size: .875rem; }
-.catalog-search-wrap input::placeholder { color: #746b6d; }
-.catalog-search-wrap:focus-within { border-color: #b18a25; box-shadow: 0 0 0 3px rgba(212,175,55,.25); }
-#clear-catalog-search { border-radius: 999px; background: #f7f1e5; padding: .35rem .7rem; color: #4d2028; font-size: .75rem; font-weight: 600; }
-#clear-catalog-search[hidden] { display: none; }
-.catalog-empty { border: 1px dashed rgba(128,91,24,.35); background: #fff; color: #624b4f; padding: 2rem; border-radius: 1rem; text-align: center; }
-.catalog-card { transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease; }
-.catalog-card:hover { border-color: rgba(177,138,37,.55); box-shadow: 0 14px 28px rgba(44,14,20,.1); transform: translateY(-3px); }
-.catalog-card > button img { transition: transform .45s ease; }
-.catalog-card:hover > button img { transform: scale(1.035); }
-.mobile-action-bar { position: fixed; z-index: 40; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: repeat(3,1fr); padding: .45rem .5rem calc(.45rem + env(safe-area-inset-bottom)); background: #2c0e14; border-top: 1px solid rgba(212,175,55,.45); box-shadow: 0 -5px 20px rgba(44,14,20,.2); }
-.mobile-action-bar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .15rem; min-height: 44px; color: #ffe89c; font-size: .72rem; font-weight: 700; border-radius: .5rem; }
-.mobile-action-bar a + a { border-left: 1px solid rgba(212,175,55,.2); }
-.mobile-action-bar i { font-size: 1.1rem; }
-@media (min-width: 768px) { .mobile-action-bar { display: none; } }
-@media (max-width: 767px) { body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); } #site-header > div:first-child { display: none; } }
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto !important; }
     * { transition-duration: 0.01ms !important; }
-    .catalog-card:hover { transform: none; }
 }
-::selection { background: #D4AF37; color: #1d080c; }
-.nav-btn { white-space: nowrap; }
-#home-tiles > button { isolation: isolate; }
-#home-tiles > button img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-#home-tiles > button:hover img { transform: scale(1.045); }
-#home-tiles > button:focus-visible { outline-offset: 4px; }
-@media (max-width: 639px) {
-    header .text-gold-300 { font-size: .68rem; }
-    header .h-20 { height: 4.25rem; }
-    header img[alt="Gorri Jewellers and Sons Logo"] { max-height: 3.4rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-    #home-tiles > button img { transition: none; }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    header nav { display: none; }
-    #mobile-menu-btn { display: block; }
-    #mobile-menu:not(.hidden) { display: block; }
-}
-
-.image-credits-table th, .image-credits-table td { padding: .85rem 1rem; border-bottom: 1px solid rgba(128,91,24,.16); vertical-align: top; }
-.image-credits-table tbody tr:nth-child(even) { background: #faf7f2; }
-.image-credits-table a { color: #805b18; text-decoration: underline; }

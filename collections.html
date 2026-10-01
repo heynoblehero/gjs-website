@@ -24,22 +24,15 @@
                 <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Exquisite Catalogue</span>
                 
                 <h1 class="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text leading-relaxed pb-2">Our Jewellery Collections</h1>
-                <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
-                    These catalogue photos are made-to-order design references. Final materials, design details and pricing are confirmed with GJS.
+                <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto font-light leading-relaxed">
+                    Choose Gold, Diamond or Silver, then browse by women's and men's jewellery, necklaces, rings and bangles.
                 </p>
             </div>
         </section>
 
         <section id="filter-bar" class="bg-white border-b border-gold-500/20 md:sticky md:top-28 z-30 shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
-                <div class="catalog-search-wrap max-w-xl mx-auto">
-                    <label for="catalog-search" class="sr-only">Search designs and categories</label>
-                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                    <input id="catalog-search" type="search" placeholder="Search all designs and categories" autocomplete="off">
-                    <button type="button" id="clear-catalog-search" aria-label="Clear search" hidden>Clear</button>
-                </div>
-                <p id="catalog-search-status" class="sr-only" role="status" aria-live="polite"></p>
-                <div id="metal-tabs" class="flex justify-center gap-2 sm:gap-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-3">
+                <div class="flex justify-center gap-2 sm:gap-4">
                     <button data-metal="gold" onclick="switchMainCategory('gold')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Gold</button>
                     <button data-metal="diamond" onclick="switchMainCategory('diamond')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Diamond</button>
                     <button data-metal="silver" onclick="switchMainCategory('silver')" class="main-cat-tab px-5 sm:px-6 py-2.5 rounded-full text-xs font-bold">Silver</button>
@@ -54,7 +47,7 @@
 
     <div id="site-footer"></div>
 
-    <div id="product-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="product-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative border border-gold-500/30">
             <button id="modal-close" onclick="closeModal()" aria-label="Close" class="absolute top-3 right-3 text-gray-600 hover:text-black w-9 h-9 rounded-full bg-white/90 flex items-center justify-center z-10 shadow">
                 <i class="fa-solid fa-xmark text-lg"></i>
@@ -73,7 +66,7 @@
                     <div class="space-y-2 pt-3 border-t border-gray-100">
                         <a id="modal-wa-link" href="#" target="_blank" rel="noopener" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-lg text-xs flex items-center justify-center space-x-2 transition-colors">
                             <i class="fa-brands fa-whatsapp text-base"></i>
-                            <span>Ask about this design</span>
+                            <span>Ask for price on WhatsApp</span>
                         </a>
                     </div>
                 </div>
